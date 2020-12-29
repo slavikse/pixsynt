@@ -5,18 +5,14 @@ module.exports = {
     node: true,
   },
 
-  extends: [
-    'plugin:vue/recommended',
-    '@vue/airbnb',
-  ],
-
   parserOptions: {
     parser: 'babel-eslint',
   },
 
-  globals: {
-    // ymaps: 'readonly',
-  },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    '@vue/airbnb',
+  ],
 
   rules: {
     'no-console': 'off',
@@ -60,6 +56,7 @@ module.exports = {
     'vue/multiline-html-element-content-newline': 'warn',
     'vue/mustache-interpolation-spacing': 'warn',
     'vue/name-property-casing': 'warn',
+    'vue/new-line-between-multi-line-property': 'warn',
     'vue/no-arrow-functions-in-watch': 'warn',
     'vue/no-async-in-computed-properties': 'warn',
     // 'vue/no-bare-strings-in-template': 'warn',
@@ -79,7 +76,7 @@ module.exports = {
     'vue/no-deprecated-scope-attribute': 'warn',
     'vue/no-deprecated-slot-attribute': 'warn',
     'vue/no-deprecated-slot-scope-attribute': 'warn',
-    // 'vue/no-deprecated-v-bind-sync': 'warn',
+    'vue/no-deprecated-v-bind-sync': 'warn',
     'vue/no-deprecated-v-on-native-modifier': 'warn',
     'vue/no-deprecated-v-on-number-modifiers': 'warn',
     'vue/no-deprecated-vue-config-keycodes': 'warn',
@@ -101,7 +98,11 @@ module.exports = {
     'vue/no-ref-as-operand': 'warn',
     'vue/no-reserved-component-names': 'warn',
     'vue/no-reserved-keys': 'warn',
+    'vue/no-restricted-block': 'warn',
+    'vue/no-restricted-call-after-await': 'warn',
     'vue/no-restricted-component-options': 'warn',
+    'vue/no-restricted-custom-event': 'warn',
+    'vue/no-restricted-props': 'warn',
     'vue/no-restricted-static-attribute': 'warn',
     'vue/no-restricted-v-bind': 'warn',
     'vue/no-setup-props-destructure': 'warn',
@@ -113,7 +114,7 @@ module.exports = {
     'vue/no-template-shadow': 'warn',
     'vue/no-template-target-blank': 'warn',
     'vue/no-textarea-mustache': 'warn',
-    // 'vue/no-unregistered-components': 'warn',
+    'vue/no-unregistered-components': 'warn',
     'vue/no-unsupported-features': 'warn',
     'vue/no-unused-components': 'warn',
     'vue/no-unused-properties': 'warn',
@@ -147,11 +148,12 @@ module.exports = {
     'vue/script-indent': 'warn',
     'vue/singleline-html-element-content-newline': 'warn',
     // 'vue/sort-keys': 'warn',
-    // 'vue/static-class-names-order': 'warn',
+    'vue/static-class-names-order': 'warn',
     'vue/this-in-template': 'warn',
     'vue/use-v-on-exact': 'warn',
     'vue/v-bind-style': 'warn',
     'vue/v-for-delimiter-style': 'warn',
+    'vue/v-on-event-hyphenation': 'warn',
     'vue/v-on-function-call': 'warn',
     'vue/v-on-style': 'warn',
     'vue/v-slot-style': 'warn',
