@@ -1,18 +1,140 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="icon" sizes="512x512" href="/logo.png"><style>html, body {
-  background-color: #102027;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<meta
+  http-equiv="x-ua-compatible"
+  content="ie=edge"
+/>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+
+<link
+  rel="icon"
+  sizes="512x512"
+  href="./logo.png"
+/>
+
+<style>
+:root {
+  --light: #cfd8dc;
+  --medium: #263238;
+  --black: #102027;
+}
+
+html, body {
+  background-color: var(--black);
 }
 
 body {
   margin: 0;
-}</style><title>PIXSYNT</title><link href="/css/app~d0ae3f07.cbe7bd2a.css" rel="preload" as="style"><link href="/js/app~d0ae3f07.4d09aeec.js" rel="preload" as="script"><link href="/js/chunk-vendors~0a1e6715.68b67676.js" rel="preload" as="script"><link href="/js/chunk-vendors~5ea1a303.e1ecc703.js" rel="preload" as="script"><link href="/js/chunk-vendors~d939e436.2de8860e.js" rel="preload" as="script"><link href="/css/app~d0ae3f07.cbe7bd2a.css" rel="stylesheet"></head><script>(function (m, e, t, r, i, k, a) {
-     m[i] = m[i] || function () {(m[i].a = m[i].a || []).push(arguments);};
-     m[i].l = 1 * new Date();
-     k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
-   })
-   (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+}
 
-   ym(70877239, 'init', {
-     clickmap: true,
-     trackLinks: true,
-     accurateTrackBounce: true,
-   });</script><noscript><div><img src="https://mc.yandex.ru/watch/70877239" style="position:absolute; left:-9999px;" alt=""></div></noscript><body><div id="app"></div><script src="/js/chunk-vendors~0a1e6715.68b67676.js"></script><script src="/js/chunk-vendors~5ea1a303.e1ecc703.js"></script><script src="/js/chunk-vendors~d939e436.2de8860e.js"></script><script src="/js/app~d0ae3f07.4d09aeec.js"></script></body></html>
+@font-face {
+  font-family: "Overlorder";
+  src: url(./Overlorder.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App {
+  margin: 0 auto;
+  max-width: 512px;
+  height: 100vh;
+  font-family: "Overlorder", serif;
+  background-color: var(--medium);
+  user-select: none;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 128px;
+  font-size: 256px;
+  line-height: 0.2;
+  color: var(--light);
+}
+
+.waiting {
+  margin-top: 32px;
+  height: 64px;
+  text-align: center;
+  font-size: 128px;
+  line-height: 0.4;
+  color: var(--black);
+}
+
+.timer {
+  margin-top: 64px;
+  text-align: center;
+  font-size: 64px;
+  line-height: 0.6;
+  color: var(--black);
+}
+
+.thank-you {
+  position: absolute;
+  margin-top: 16px;
+  max-width: 512px;
+  min-height: 128px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 64px;
+  line-height: 0.4;
+  color: var(--light);
+}
+</style>
+
+<title>PIXSYNT</title>
+</head>
+
+<script>
+const $timer = document.querySelector('.timer');
+const $thankYou = document.querySelector('.thank-you');
+let time = document.documentElement.clientHeight;
+
+setInterval(tick, 2 ** 6);
+
+function tick() {
+  requestAnimationFrame(() => {
+    time -= 2;
+
+    if (time < 0) {
+      time = document.documentElement.clientHeight;
+    }
+
+    $timer.textContent = time;
+    $thankYou.hidden = time < 64;
+  });
+}
+</script>
+
+<body>
+<img
+  src="https://mc.yandex.ru/watch/70902622"
+  style="position:absolute;left:-9999px;"
+/>
+
+<div class="App">
+  <div class="title">
+    <div>PIX</div>
+    <div>SYNT</div>
+  </div>
+
+  <div class="waiting">
+    COMING SOON...
+  </div>
+
+  <div class="timer" />
+
+  <div class="thank-you">
+    THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
+  </div>
+</div>
+</body>
+</html>
