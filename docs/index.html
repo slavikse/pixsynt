@@ -93,27 +93,6 @@ body {
 <title>PIXSYNT</title>
 </head>
 
-<script>
-const $timer = document.querySelector('.timer');
-const $thankYou = document.querySelector('.thank-you');
-let time = document.documentElement.clientHeight;
-
-setInterval(tick, 2 ** 6);
-
-function tick() {
-  requestAnimationFrame(() => {
-    time -= 2;
-
-    if (time < 0) {
-      time = document.documentElement.clientHeight;
-    }
-
-    $timer.textContent = time;
-    $thankYou.hidden = time < 64;
-  });
-}
-</script>
-
 <body>
 <img
   src="https://mc.yandex.ru/watch/70902622"
@@ -136,5 +115,26 @@ function tick() {
     THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
   </div>
 </div>
+
+<script>
+const $timer = document.querySelector('.timer');
+const $thankYou = document.querySelector('.thank-you');
+let time = document.documentElement.clientHeight;
+
+setInterval(tick, 2 ** 6);
+
+function tick() {
+  requestAnimationFrame(() => {
+    time -= 2;
+
+    if (time < 0) {
+      time = document.documentElement.clientHeight;
+    }
+
+    $timer.textContent = time;
+    $thankYou.hidden = time < 64;
+  });
+}
+</script>
 </body>
 </html>
