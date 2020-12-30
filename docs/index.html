@@ -109,7 +109,7 @@ body {
     COMING SOON...
   </div>
 
-  <div class="timer" />
+  <div class="timer"></div>
 
   <div class="thank-you">
     THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
@@ -132,7 +132,7 @@ function tick() {
     }
 
     $timer.textContent = time;
-    $thankYou.hidden = time < 64;
+    $thankYou.hidden = time > 64;
   });
 }
 </script>
