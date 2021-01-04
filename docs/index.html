@@ -152,6 +152,15 @@ body {
   transition: letter-spacing 0.4s ease-out, color 0.6s;
 }
 
+.container .donation:visited {
+  color: var(--black);
+}
+
+.container .donation:hover {
+  letter-spacing: 12px;
+  color: var(--light);
+}
+
 @media (max-width: 527px) {
   .container .donation {
     margin-top: 100px;
@@ -173,15 +182,6 @@ body {
     margin-top: 32px;
     font-size: 64px;
   }
-}
-
-.container .donation:visited {
-  color: var(--light);
-}
-
-.container .donation:hover {
-  letter-spacing: 12px;
-  color: var(--light);
 }
 
 .timer-container {
