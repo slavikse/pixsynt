@@ -32,6 +32,7 @@ html, body {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -44,135 +45,208 @@ body {
 .App {
   position: relative;
   margin: 0 auto;
-  max-width: 512px;
+  max-width: 580px;
   height: 100vh;
   font-family: "Overlorder", serif;
-  background-color: var(--medium);
   user-select: none;
+  perspective: 3072px;
+  perspective-origin: top center;
+  background-color: var(--medium);
 }
 
-.title {
+.App::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 160px;
+  background-color: var(--black);
+  content: "";
+}
+
+.waiting {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  font-size: 128px;
+  line-height: 0.65;
+  color: var(--black);
+  transform-style: preserve-3d;
+  animation: waiting-rotate 10s infinite linear reverse;
+  pointer-events: none;
+}
+
+.waiting-side {
+  position: absolute;
+  width: 32rem;
+  height: 8rem;
+  background-color: var(--medium);
+  backface-visibility: hidden;
+}
+
+.waiting-side-left {
+  transform: translateX(-30rem) rotateY(270deg);
+}
+
+.waiting-side-left-backface {
+  transform: translateX(-30rem) rotateY(90deg);
+}
+
+.waiting-side-back {
+  transform: translateZ(-30rem);
+}
+
+.waiting-side-back-backface {
+  transform: translateZ(-30rem) rotateY(180deg);
+}
+
+.waiting-side-right {
+  transform: translateX(30rem) rotateY(270deg);
+}
+
+.waiting-side-right-backface {
+  transform: translateX(30rem) rotateY(90deg);
+}
+
+.waiting-side-front {
+  transform: translateZ(30rem) rotateY(180deg);
+}
+
+.waiting-side-front-backface {
+  transform: translateZ(30rem);
+}
+
+@keyframes waiting-rotate {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.container {
+  padding: 160px 48px 0;
+  background-color: var(--medium);
+}
+
+.container .title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 128px;
   font-size: 256px;
-  line-height: 0.2;
+  line-height: 0.3;
   color: var(--light);
 }
 
-.donation {
-  margin-top: 32px;
-  display: block;
-  border: 0 dotted var(--medium);
-  text-align: center;
-  font-size: 64px;
-  line-height: 1;
+.container .donation {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 128px;
+  line-height: 0.3;
   color: var(--black);
+  text-decoration: none;
   outline: none;
-  transition: border 0.3s ease-in, letter-spacing 0.8s ease-in, font-size 0.4s ease-in, color 0.4s ease-in;
+  transition: letter-spacing 0.4s ease-out, color 0.6s;
 }
 
-.donation:visited {
+@media (max-width: 527px) {
+  .container .donation {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 367px) {
+  .container .donation {
+    margin-top: 180px;
+  }
+}
+
+@media (max-width: 240px) {
+  .container .title {
+    font-size: 128px;
+  }
+
+  .container .donation {
+    margin-top: 32px;
+    font-size: 64px;
+  }
+}
+
+.container .donation:visited {
   color: var(--light);
 }
 
-.donation:hover {
-  border: 8px dotted var(--black);
-  border-right: none;
-  border-left: none;
-  letter-spacing: 16px;
-  font-size: 128px;
+.container .donation:hover {
+  letter-spacing: 12px;
   color: var(--light);
 }
 
-.waiting {
-  margin-top: 64px;
-  height: 128px;
-  text-align: center;
-  font-size: 128px;
-  line-height: 0.4;
-  color: var(--black);
-}
-
-.timer {
-  text-align: center;
-  font-size: 64px;
-  line-height: 0.6;
-  color: var(--black);
-}
-
-.thank-you {
+.timer-container {
   margin-top: 32px;
-  max-width: 512px;
-  min-height: 128px;
-  padding: 0 16px;
+}
+
+.timer-container .timer {
   text-align: center;
   font-size: 64px;
-  line-height: 0.4;
+  color: var(--black);
+}
+
+.timer-container .thank-you {
+  min-height: 128px;
+  padding: 0 48px;
+  text-align: center;
+  font-size: 56px;
+  line-height: 0.45;
   color: var(--light);
 }
 
-.link {
+.links {
   position: absolute;
+  top: 160px;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.links .link {
+  position: absolute;
+  z-index: 3;
   display: block;
+  padding-bottom: 18px;
   border: 0 solid var(--medium);
   writing-mode: vertical-lr;
   text-orientation: upright;
   text-decoration: none;
   font-size: 38px;
   line-height: 1;
-  color: var(--medium);
+  color: var(--black);
+  background-color: var(--medium);
   transition: border 0.3s ease-in, color 0.3s ease-in;
   outline: none;
 }
 
-.link:visited {
-  color: var(--medium);
+.links .link:visited {
+  color: var(--black);
 }
 
-.link:hover {
+.links .link:hover {
   border: 4px solid var(--light);
   color: var(--light);
 }
 
-/* step 32px */
-.link-1,
-.link-3,
-.link-5 {
-  left: -42px;
-  border-right-width: 4px;
-}
-
-.link-2,
-.link-4,
-.link-6 {
-  right: -42px;
+.links .link-1 {
+  top: 0;
+  left: 0;
   border-left-width: 4px;
 }
 
-.link-1 {
+.links .link-2 {
   top: 0;
-}
-
-.link-2 {
-  top: 0;
-}
-
-.link-3 {
-  top: 108px;
-}
-
-.link-4 {
-  top: 260px;
-}
-
-.link-5 {
-  top: 444px;
-}
-
-.link-6 {
-  top: 558px;
+  right: 0;
+  border-right-width: 4px;
 }
 </style>
 
@@ -186,76 +260,83 @@ body {
 />
 
 <div class="App">
-  <div class="title">
-    <div>PIX</div>
-    <div>SYNT</div>
-  </div>
-
-  <a
-    href="https://yoomoney.ru/to/410011000753520"
-    target="_blank"
-    class="donation"
-  >
-    DONATION
-  </a>
-
   <div class="waiting">
-    COMING SOON
+    <div class="waiting-side waiting-side-left">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-left-backface">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-back">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-back-backface">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-right">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-right-backface">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-front">
+      COMING SOON
+    </div>
+
+    <div class="waiting-side waiting-side-front-backface">
+      COMING SOON
+    </div>
   </div>
 
-  <div class="timer"></div>
+  <div class="container">
+    <div class="title">
+      <div>PIX</div>
+      <div>SY</div>
+      <div>NT</div>
+    </div>
 
-  <div class="thank-you">
-    THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
+    <a
+      href="https://yoomoney.ru/to/410011000753520"
+      target="_blank"
+      class="donation"
+    >
+      <div>DON</div>
+      <div>ATI</div>
+      <div>ON</div>
+    </a>
   </div>
 
-  <a
-    href="https://vk.com/pixsynt"
-    target="_blank"
-    class="link link-1"
-  >
-    vk
-  </a>
+  <div class="timer-container">
+    <div class="timer">0</div>
 
-  <a
-    href="https://twitch.tv/pixsynt"
-    target="_blank"
-    class="link link-2"
-  >
-    twitch
-  </a>
+    <div class="thank-you">
+      THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
+    </div>
+  </div>
 
-  <a
-    href="https://facebook.com/pix.synt"
-    target="_blank"
-    class="link link-3"
-  >
-    facebook
-  </a>
+  <div class="links">
+    <a
+      href="https://youtube.com/channel/UCN0Tr3jeElAAseREHDbrxHg/featured"
+      target="_blank"
+      class="link link-1"
+    >
+      youtube
+    </a>
 
-  <a
-    href="https://youtube.com/channel/UCN0Tr3jeElAAseREHDbrxHg/featured"
-    target="_blank"
-    class="link link-4"
-  >
-    youtube
-  </a>
-
-  <a
-    href="https://pixsynt@yandex.ru"
-    target="_blank"
-    class="link link-5"
-  >
-    yandex
-  </a>
-
-  <a
-    href="https://pixsynt@gmail.com"
-    target="_blank"
-    class="link link-6"
-  >
-    gmail
-  </a>
+    <a
+      href="https://twitch.tv/pixsynt"
+      target="_blank"
+      class="link link-2"
+    >
+      twitch
+    </a>
+  </div>
 </div>
 
 <script>
