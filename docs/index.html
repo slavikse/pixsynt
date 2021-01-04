@@ -42,6 +42,7 @@ body {
 }
 
 .App {
+  position: relative;
   margin: 0 auto;
   max-width: 512px;
   height: 100vh;
@@ -72,14 +73,25 @@ body {
 .donation {
   margin-top: 64px;
   display: block;
+  border: 0 dotted var(--medium);
   text-align: center;
   font-size: 64px;
   line-height: 1;
-  color: var(--light);
+  color: var(--black);
   outline: none;
+  transition: border 0.3s ease-in, letter-spacing 0.8s ease-in, font-size 0.4s ease-in, color 0.4s ease-in;
 }
 
 .donation:visited {
+  color: var(--light);
+}
+
+.donation:hover {
+  border: 8px dotted var(--black);
+  border-right: none;
+  border-left: none;
+  letter-spacing: 16px;
+  font-size: 128px;
   color: var(--light);
 }
 
@@ -100,6 +112,68 @@ body {
   font-size: 64px;
   line-height: 0.4;
   color: var(--light);
+}
+
+.link {
+  position: absolute;
+  display: block;
+  border: 0 solid var(--medium);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  text-decoration: none;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--medium);
+  transition: border 0.3s ease-in, color 0.3s ease-in;
+  outline: none;
+}
+
+.link:visited {
+  color: var(--medium);
+}
+
+.link:hover {
+  border: 4px solid var(--light);
+  color: var(--light);
+}
+
+/* step 32px */
+.link-1,
+.link-3,
+.link-5 {
+  left: -42px;
+  border-right-width: 4px;
+}
+
+.link-2,
+.link-4,
+.link-6 {
+  right: -42px;
+  border-left-width: 4px;
+}
+
+.link-1 {
+  top: 0;
+}
+
+.link-2 {
+  top: 0;
+}
+
+.link-3 {
+  top: 108px;
+}
+
+.link-4 {
+  top: 260px;
+}
+
+.link-5 {
+  top: 444px;
+}
+
+.link-6 {
+  top: 558px;
 }
 </style>
 
@@ -135,6 +209,54 @@ body {
   <div class="thank-you">
     THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
   </div>
+
+  <a
+    href="https://vk.com/pixsynt"
+    target="_blank"
+    class="link link-1"
+  >
+    vk
+  </a>
+
+  <a
+    href="https://twitch.tv/pixsynt"
+    target="_blank"
+    class="link link-2"
+  >
+    twitch
+  </a>
+
+  <a
+    href="https://facebook.com/pix.synt"
+    target="_blank"
+    class="link link-3"
+  >
+    facebook
+  </a>
+
+  <a
+    href="https://youtube.com/channel/UCN0Tr3jeElAAseREHDbrxHg/featured"
+    target="_blank"
+    class="link link-4"
+  >
+    youtube
+  </a>
+
+  <a
+    href="https://pixsynt@yandex.ru"
+    target="_blank"
+    class="link link-5"
+  >
+    yandex
+  </a>
+
+  <a
+    href="https://pixsynt@gmail.com"
+    target="_blank"
+    class="link link-6"
+  >
+    gmail
+  </a>
 </div>
 
 <script>
