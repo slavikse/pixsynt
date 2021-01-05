@@ -64,6 +64,13 @@ body {
   content: "";
 }
 
+.App.mobile {
+  overflow: hidden;
+}
+
+.App.desktop {
+}
+
 .waiting {
   position: relative;
   z-index: 3;
@@ -164,12 +171,14 @@ body {
 @media (max-width: 527px) {
   .container .donation {
     margin-top: 100px;
+    font-size: 100px;
   }
 }
 
 @media (max-width: 367px) {
   .container .donation {
     margin-top: 180px;
+    font-size: 70px;
   }
 }
 
@@ -180,7 +189,7 @@ body {
 
   .container .donation {
     margin-top: 32px;
-    font-size: 64px;
+    font-size: 50px;
   }
 }
 
@@ -220,7 +229,7 @@ body {
   writing-mode: vertical-lr;
   text-orientation: upright;
   text-decoration: none;
-  font-size: 38px;
+  font-size: 52px;
   line-height: 1;
   color: var(--black);
   background-color: var(--medium);
@@ -263,34 +272,42 @@ body {
   <div class="waiting">
     <div class="waiting-side waiting-side-left">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-left-backface">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-back">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-back-backface">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-right">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-right-backface">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-front">
       COMING SOON
+      <!-- RELEASE -->
     </div>
 
     <div class="waiting-side waiting-side-front-backface">
       COMING SOON
+      <!-- RELEASE -->
     </div>
   </div>
 
@@ -330,15 +347,16 @@ body {
     </a>
 
     <a
-      href="https://twitch.tv/pixsynt"
+      href="https://instagram.com/pixsynt"
       target="_blank"
       class="link link-2"
     >
-      twitch
+      instagram
     </a>
   </div>
 </div>
 
+<!-- TODO на релиз менять текст COMING SOON на RELEASE (белый текст) -->
 <script>
 const $timer = document.querySelector('.timer');
 const $thankYou = document.querySelector('.thank-you');
@@ -359,6 +377,14 @@ function tick() {
     $timer.textContent = time;
     $thankYou.hidden = time > 64;
   });
+}
+
+const $app = document.querySelector('.App');
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  $app.classList.add('mobile');
+} else {
+  $app.classList.add('desktop');
 }
 </script>
 </body>
