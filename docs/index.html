@@ -375,6 +375,7 @@ function tick() {
     }
 
     $timer.textContent = time;
+    $timer.hidden = time <= 64;
     $thankYou.hidden = time > 64;
   });
 }
