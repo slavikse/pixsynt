@@ -59,7 +59,7 @@ body {
   z-index: 2;
   top: 0;
   width: 100%;
-  height: 160px;
+  height: 100px;
   background-color: var(--black);
   content: "";
 }
@@ -76,7 +76,7 @@ body {
   z-index: 3;
   text-align: center;
   font-size: 128px;
-  line-height: 0.65;
+  line-height: 0.25;
   color: var(--black);
   transform-style: preserve-3d;
   animation: waiting-rotate 10s infinite linear reverse;
@@ -86,7 +86,7 @@ body {
 .waiting-side {
   position: absolute;
   width: 32rem;
-  height: 8rem;
+  height: 5rem;
   background-color: var(--medium);
   backface-visibility: hidden;
 }
@@ -130,11 +130,12 @@ body {
 }
 
 .container {
-  padding: 160px 48px 0;
+  padding: 100px 48px 0;
   background-color: var(--medium);
 }
 
 .container .title {
+  margin-top: -24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -147,7 +148,7 @@ body {
 .container .donation {
   position: relative;
   z-index: 1;
-  margin-top: 16px;
+  margin-top: 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -214,7 +215,7 @@ body {
 
 .links {
   position: absolute;
-  top: 160px;
+  top: 100px;
   bottom: 0;
   width: 100%;
   overflow: auto;
@@ -229,10 +230,9 @@ body {
   writing-mode: vertical-lr;
   text-orientation: upright;
   text-decoration: none;
-  font-size: 52px;
+  font-size: 46px;
   line-height: 1;
   color: var(--black);
-  background-color: var(--medium);
   transition: border 0.3s ease-in, color 0.3s ease-in;
   outline: none;
 }
