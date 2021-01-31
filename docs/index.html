@@ -48,8 +48,8 @@ body {
   height: 100vh;
   padding: 0 48px;
   font-family: "PixelOperator8-Bold", serif;
-  user-select: none;
   background-color: var(--medium);
+  transition: padding 0.1s;
 }
 
 .title {
@@ -91,25 +91,27 @@ body {
   transition: font-size 0.1s;
 }
 
-.pixel-font {
+.links {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  color: var(--light);
+  bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.privacy {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
+.links .privacy,
+.links .mail,
+.links .pixel-font {
+  margin: 0 16px 16px 0;
+  font-size: 14px;
   color: var(--light);
+  outline: none;
 }
 
 @media (max-width: 400px) {
+  .App {
+    padding: 0 20px;
+  }
+  
   .title {
     font-size: 48px;
   }
@@ -160,22 +162,33 @@ body {
     </div>
   </div>
 
-  <a
-    href="https://fontlibrary.org/en/font/pixel-operator"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="pixel-font"
-  >
-    FONT
-  </a>
+  <div class="links">
+    <a
+      href="/privacy.html"
+      target="_blank"
+      class="privacy"
+    >
+      PRIVACY
+    </a>
 
-  <a
-    href="/privacy.html"
-    target="_blank"
-    class="privacy"
-  >
-    PRIVACY
-  </a>
+    <a
+      href="mailto:pixsynt@ya.ru"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mail"
+    >
+      PIXSYNT@YA.RU
+    </a>
+
+    <a
+      href="https://fontlibrary.org/en/font/pixel-operator"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="pixel-font"
+    >
+      FONT
+    </a>
+  </div>
 </div>
 
 <script>
