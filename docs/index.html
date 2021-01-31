@@ -72,27 +72,6 @@ body {
   transition: margin-top 0.1s;
 }
 
-.donation {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 38px;
-  line-height: 1.2;
-  color: var(--light);
-  text-decoration: none;
-  outline: none;
-  transition: margin-top 0.1s, font-size 0.1s, letter-spacing 0.4s ease-out;
-}
-
-.donation:visited {
-  color: var(--light);
-}
-
-.donation:hover {
-  letter-spacing: 10px;
-}
-
 .timer-container {
   margin-top: 30px;
   transition: margin-top 0.1s;
@@ -110,39 +89,6 @@ body {
   line-height: 1.2;
   color: var(--light);
   transition: font-size 0.1s;
-}
-
-.links .link {
-  position: absolute;
-  top: 4px;
-  display: block;
-  border: 0 solid var(--medium);
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  text-decoration: none;
-  font-size: 32px;
-  color: var(--black);
-  transition: border 0.3s ease-in, font-size 0.1s, color 0.3s ease-in;
-  outline: none;
-}
-
-.links .link:visited {
-  color: var(--black);
-}
-
-.links .link:hover {
-  border: 4px solid var(--light);
-  color: var(--light);
-}
-
-.links .link-1 {
-  left: 0;
-  border-left-width: 4px;
-}
-
-.links .link-2 {
-  right: 0;
-  border-right-width: 4px;
 }
 
 .privacy {
@@ -163,10 +109,6 @@ body {
     font-size: 20px;
   }
 
-  .donation {
-    font-size: 30px;
-  }
-
   .timer-container .thank-you {
     font-size: 20px;
   }
@@ -181,16 +123,8 @@ body {
     font-size: 16px;
   }
 
-  .donation {
-    font-size: 16px;
-  }
-
   .timer-container .thank-you {
     font-size: 16px;
-  }
-
-  .links .link {
-    font-size: 24px;
   }
 }
 </style>
@@ -199,11 +133,6 @@ body {
 </head>
 
 <body>
-<img
-  src="https://mc.yandex.ru/watch/70902622"
-  style="position:absolute;left:-9999px;"
-/>
-
 <div class="App">
   <div class="title">
     <div>PIX</div>
@@ -214,40 +143,12 @@ body {
     COMING SOON ON STEAM
   </div>
 
-  <a
-    href="https://yoomoney.ru/to/410011000753520"
-    target="_blank"
-    class="donation"
-  >
-    <div>DON</div>
-    <div>ATI</div>
-    <div>ON</div>
-  </a>
-
   <div class="timer-container">
     <div class="timer">0</div>
 
     <div class="thank-you">
       THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
     </div>
-  </div>
-
-  <div class="links">
-    <a
-      href="https://youtube.com/channel/UCN0Tr3jeElAAseREHDbrxHg/featured"
-      target="_blank"
-      class="link link-1"
-    >
-      youtube
-    </a>
-
-    <a
-      href="https://instagram.com/pixsynt"
-      target="_blank"
-      class="link link-2"
-    >
-      instagram
-    </a>
   </div>
 
   <a

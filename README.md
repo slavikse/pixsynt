@@ -1,3 +1,1 @@
 # PIXSYNT
-
-### COMING SOON...
