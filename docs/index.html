@@ -91,9 +91,18 @@ body {
   transition: font-size 0.1s;
 }
 
+.pixel-font {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: var(--light);
+}
+
 .privacy {
   position: fixed;
-  bottom: 32px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
@@ -140,7 +149,7 @@ body {
   </div>
 
   <div class="coming-soon">
-    COMING SOON ON STEAM
+    COMING SOON ON <br> GOOGLE PLAY & STEAM
   </div>
 
   <div class="timer-container">
@@ -150,6 +159,13 @@ body {
       THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
     </div>
   </div>
+
+  <a
+    href="https://fontlibrary.org/en/font/pixel-operator" target="_blank" rel="noopener noreferrer"
+    class="pixel-font"
+  >
+    Font
+  </a>
 
   <a
     href="/privacy.html"
