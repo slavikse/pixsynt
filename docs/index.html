@@ -62,6 +62,7 @@ body {
   font-size: 64px;
   line-height: 1.2;
   color: var(--light);
+  text-shadow: 4px 4px 0 var(--black), -4px 4px 0 var(--black);
   transition: font-size 0.1s;
 }
 
@@ -71,6 +72,7 @@ body {
   line-height: 1.4;
   font-size: 16px;
   color: var(--light);
+  text-shadow: 2px 2px 0 var(--black);
   transition: margin-top 0.1s;
 }
 
@@ -85,6 +87,7 @@ body {
   font-size: 24px;
   line-height: 1.4;
   color: var(--light);
+  text-shadow: 4px 4px 0 var(--black);
   transition: font-size 0.1s;
 }
 
@@ -96,6 +99,7 @@ body {
   font-size: 14px;
   line-height: 1.3;
   color: var(--light);
+  text-shadow: 2px 2px 0 var(--black);
 }
 
 .projects .links {
@@ -105,17 +109,19 @@ body {
 }
 
 .projects .links .link {
-  margin: 24px 14px 0 14px;
+  margin: 20px 14px 0 14px;
   display: block;
   width: 100%;
   font-size: 24px;
   line-height: 1.4;
   color: var(--light);
   outline: none;
+  text-shadow: 4px 4px 0 var(--black);
 }
 
 .projects .links .link.wait {
   color: var(--black);
+  text-shadow: none;
 }
 
 .timer-container {
@@ -142,6 +148,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-shadow: 2px 2px 0 var(--black);
 }
 
 .info .privacy,
@@ -232,6 +239,47 @@ body {
         -->
       </span>
     </div>
+
+    <!-- /// -->
+
+    <!--<div class="project">-->
+    <!--  <span class="header">-->
+    <!--    LIFE IS NOT THE END 2-->
+    <!--  </span>-->
+
+    <!--  &lt;!&ndash; TODO &ndash;&gt;-->
+    <!--  <span class="description">-->
+    <!--    TODO-->
+    <!--  </span>-->
+
+    <!--  <span class="links">-->
+    <!--    &lt;!&ndash;-->
+    <!--    <a-->
+    <!--      href="https://play.google.com/store/apps/details?id=org.godotengine.lifeisnottheend"-->
+    <!--      target="_blank"-->
+    <!--      class="link"-->
+    <!--    >-->
+    <!--      GOOGLE PLAY-->
+    <!--    </a>-->
+    <!--    &ndash;&gt;-->
+
+    <!--    &lt;!&ndash;-->
+    <!--    <span class="link wait">-->
+    <!--      COMING SOON ON GOOGLE PLAY-->
+    <!--    </span>-->
+    <!--    &ndash;&gt;-->
+
+    <!--    &lt;!&ndash;-->
+    <!--    <span class="link wait">-->
+    <!--      COMING SOON ON STEAM-->
+    <!--    </span>-->
+    <!--    &ndash;&gt;-->
+
+    <!--    <span class="link wait">-->
+    <!--      COMING SOON ON <br> GOOGLE PLAY & STEAM-->
+    <!--    </span>-->
+    <!--  </span>-->
+    <!--</div>-->
   </div>
 
   <div class="timer-container">
@@ -272,6 +320,8 @@ body {
 </div>
 
 <script>
+// TODO после релиза в стим, дать рекламу в гугл (если не разблочат - создать акк на pixsynt@gmail, так же дать в янд)
+
 const $timer = document.querySelector('.timer');
 const $thankYou = document.querySelector('.thank-you');
 let time = document.documentElement.clientHeight;
