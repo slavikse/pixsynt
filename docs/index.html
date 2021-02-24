@@ -119,6 +119,10 @@ body {
   text-shadow: 4px 4px 0 var(--black);
 }
 
+.projects .links .link.gplay {
+  font-size: 16px;
+}
+
 .projects .links .link.wait {
   color: var(--black);
   text-shadow: none;
@@ -145,7 +149,7 @@ body {
 }
 
 .info {
-  margin-top: 64px;
+  margin-top: 128px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -213,13 +217,28 @@ body {
       </span>
 
       <span class="links">
+        <a
+          href="https://store.steampowered.com/app/1555900/Life_Is_Not_The_End"
+          target="_blank"
+          class="link"
+        >
+          STEAM
+        </a>
+
+        <span class="link gplay">
+          SEARCH IN GOOGLE PLAY
+        </span>
+
+        <!--
         <span class="link wait">
           COMING SOON ON STEAM
         </span>
+        -->
       </span>
     </div>
   </div>
 
+  <!--
   <div class="timer-container">
     <div class="timer">0</div>
 
@@ -227,6 +246,7 @@ body {
       THANK YOU! YOU HAVE SLIGHTLY ACCELERATED THE APPEARANCE OF THE GAME ON STEAM!
     </div>
   </div>
+  -->
 
   <div class="info">
     <a
@@ -267,27 +287,27 @@ body {
 </div>
 
 <script>
-const $timer = document.querySelector('.timer');
-const $thankYou = document.querySelector('.thank-you');
-let time = document.documentElement.clientHeight;
-
-$thankYou.hidden = true;
-
-setInterval(tick, 2 ** 6);
-
-function tick() {
-  requestAnimationFrame(() => {
-    time -= 2;
-
-    if (time < 0) {
-      time = document.documentElement.clientHeight;
-    }
-
-    $timer.textContent = time;
-    $timer.hidden = time <= 64;
-    $thankYou.hidden = time > 64;
-  });
-}
+// const $timer = document.querySelector('.timer');
+// const $thankYou = document.querySelector('.thank-you');
+// let time = document.documentElement.clientHeight;
+//
+// $thankYou.hidden = true;
+//
+// setInterval(tick, 2 ** 6);
+//
+// function tick() {
+//   requestAnimationFrame(() => {
+//     time -= 2;
+//
+//     if (time < 0) {
+//       time = document.documentElement.clientHeight;
+//     }
+//
+//     $timer.textContent = time;
+//     $timer.hidden = time <= 64;
+//     $thankYou.hidden = time > 64;
+//   });
+// }
 </script>
 </body>
 </html>
