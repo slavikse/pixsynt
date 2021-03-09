@@ -97,7 +97,6 @@ body {
 }
 
 .App {
-  position: relative;
   margin: 0 auto;
   max-width: 525px;
   min-height: 100vh;
@@ -134,7 +133,6 @@ body {
 }
 
 .projects .project .header {
-  display: block;
   padding: 10px 10px 4px;
   text-align: center;
   font-size: 28px;
@@ -146,7 +144,6 @@ body {
 
 .projects .project .description {
   margin-top: 20px;
-  display: block;
   padding: 0 10px;
   text-align: center;
   font-size: 14px;
@@ -181,6 +178,11 @@ body {
   margin-top: 15px;
   font-size: 14px;
   text-shadow: 2px 2px 0 var(--black);
+}
+
+.projects .links .tags {
+  height: 0;
+  opacity: 0;
 }
 
 .projects .links .link.wait {
@@ -261,29 +263,31 @@ body {
 
 <body>
 <div class="App">
-  <div class="title">
-    <div>PIX</div>
-    <div>SYNT</div>
-  </div>
+  <header>
+    <div class="title">
+      <div>PIX</div>
+      <div>SYNT</div>
+    </div>
 
-  <div class="developer">
-    INDIE DEVELOPER OF UNUSUAL GAMEPLAY MECHANICS
-  </div>
+    <div class="developer">
+      INDIE DEVELOPER OF UNUSUAL GAMEPLAY MECHANICS
+    </div>
+  </header>
 
-  <div class="projects">
-    <div class="project">
-      <span class="header">
+  <section class="projects">
+    <main class="project">
+      <div class="header">
         LIFE IS NOT THE END
-      </span>
+      </div>
 
-      <span class="description">
+      <div class="description">
         HELP LINTE GET OUT OF LIMBO. GET TO LEVEL 25 AND LEARN ITS HISTORY.
         JUMP ON THE PLATFORMS. BEWARE OF SHURIKENS AND SHOOT THE ACTIVATORS.
         SEARCH THE LEVEL FOR THE ENTRANCE TO THE NEXT LEVEL, BUT BE CAREFUL!
         PLATFORMS ARE DESTRUCTIBLE - DO NOT MAKE UNNECESSARY MOVEMENTS!
-      </span>
+      </div>
 
-      <span class="links">
+      <div class="links">
         <a
           href="https://store.steampowered.com/app/1555900/Life_Is_Not_The_End"
           target="_blank"
@@ -292,9 +296,9 @@ body {
           AVAILABLE ON STEAM
         </a>
 
-        <span class="link gplay">
+        <div class="link gplay">
           SEARCH IN GOOGLE PLAY
-        </span>
+        </div>
 
         <!--
         <span class="link wait">
@@ -302,12 +306,12 @@ body {
         </span>
         -->
 
-        <span style="opacity: 0; height: 0;">
+        <div class="tags">
           #indie #Arcade #Platformer #2D #Complex #onelife #minimalism #Life_Is_Not_The_End #PIXSYNT
-        </span>
-      </span>
-    </div>
-  </div>
+        </div>
+      </div>
+    </main>
+  </section>
 
   <!--
   <div class="timer-container">
@@ -319,7 +323,7 @@ body {
   </div>
   -->
 
-  <div class="info">
+  <footer class="info">
     <a
       href="https://twitter.com/PIXSYNT2"
       target="_blank"
@@ -354,7 +358,7 @@ body {
     >
       PRIVACY
     </a>
-  </div>
+  </footer>
 </div>
 
 <script>
