@@ -196,26 +196,6 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: none;
 }
 
-.timer-container {
-  margin-top: 50px;
-  transition: margin-top 0.1s;
-}
-
-.timer-container .timer {
-  text-align: center;
-  font-size: 24px;
-  color: var(--black);
-}
-
-.timer-container .thank-you {
-  text-align: center;
-  font-size: 24px;
-  line-height: 1.2;
-  color: var(--light);
-  text-shadow: 2px 2px 0 var(--black);
-  transition: font-size 0.1s;
-}
-
 .info {
   margin-top: 128px;
   display: flex;
@@ -248,19 +228,11 @@ h1, h2, h3, h4, h5, h6 {
   .projects .project .header {
     font-size: 20px;
   }
-
-  .timer-container .thank-you {
-    font-size: 20px;
-  }
 }
 
 @media (max-width: 310px) {
   .title {
     font-size: 32px;
-  }
-
-  .timer-container .thank-you {
-    font-size: 16px;
   }
 }
 </style>
@@ -334,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 
   <footer class="info">
     <a
-      href="https://twitter.com/PIXSYNT2"
+      href="https://twitter.com/PIXSYNT3"
       target="_blank"
       rel="noopener noreferrer"
       class="link"
@@ -369,29 +341,5 @@ h1, h2, h3, h4, h5, h6 {
     </a>
   </footer>
 </div>
-
-<script>
-// const $timer = document.querySelector('.timer');
-// const $thankYou = document.querySelector('.thank-you');
-// let time = document.documentElement.clientHeight;
-//
-// $thankYou.hidden = true;
-//
-// setInterval(tick, 2 ** 6);
-//
-// function tick() {
-//   requestAnimationFrame(() => {
-//     time -= 2;
-//
-//     if (time < 0) {
-//       time = document.documentElement.clientHeight;
-//     }
-//
-//     $timer.textContent = time;
-//     $timer.hidden = time <= 64;
-//     $thankYou.hidden = time > 64;
-//   });
-// }
-</script>
 </body>
 </html>
