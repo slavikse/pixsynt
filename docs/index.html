@@ -1,368 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
+  <meta charset="utf-8" />
 
-<meta
-  http-equiv="x-ua-compatible"
-  content="ie=edge"
-/>
+  <meta
+    http-equiv="x-ua-compatible"
+    content="ie=edge"
+  />
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no"
-/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
-<meta
-  name="keywords"
-  content="indiedev, gamedev, indiegame, arcade, platformer, Life_Is_Not_The_End, PIXSYNT, GodotEngine"
->
+  <meta
+    name="keywords"
+    content="indiedev, gamedev, indiegame, arcade, platformer, Life_Is_Not_The_End, PIXSYNT, GodotEngine"
+  >
 
-<title>PIXSYNT - Indie developer of unusual gameplay mechanics</title>
+  <title>PIXSYNT - Indie developer of unusual gameplay mechanics</title>
 
-<meta
-  name="description"
-  content="I suggest you get acquainted with my new game!"
-/>
+  <meta
+    name="description"
+    content="I suggest you get acquainted with my new game!"
+  />
 
-<meta
-  itemprop="image"
-  content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
->
+  <meta
+    itemprop="image"
+    content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
+  >
 
-<!-- og -->
-<meta
-  property="og:title"
-  content="PIXSYNT - Indie developer of unusual gameplay mechanics"
->
+  <!-- og -->
+  <meta
+    property="og:title"
+    content="PIXSYNT - Indie developer of unusual gameplay mechanics"
+  >
 
-<meta
-  property="og:description"
-  content="I suggest you get acquainted with my new game!"
->
+  <meta
+    property="og:description"
+    content="I suggest you get acquainted with my new game!"
+  >
 
-<meta
-  property="og:image"
-  content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
->
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
+  >
 
-<meta
-  property="og:url"
-  content="https://pixsynt.ru"
->
+  <meta
+    property="og:url"
+    content="https://pixsynt.ru"
+  >
 
-<!-- twitter -->
-<meta
-  name="twitter:title"
-  content="PIXSYNT - Indie developer of unusual gameplay mechanics"
->
+  <!-- twitter -->
+  <meta
+    name="twitter:title"
+    content="PIXSYNT - Indie developer of unusual gameplay mechanics"
+  >
 
-<meta
-  name="twitter:description"
-  content="I suggest you get acquainted with my new game!"
->
+  <meta
+    name="twitter:description"
+    content="I suggest you get acquainted with my new game!"
+  >
 
-<meta
-  name="twitter:image"
-  content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
->
+  <meta
+    name="twitter:image"
+    content="https://raw.githubusercontent.com/slavikse/pixsynt/main/docs/logo.png"
+  >
 
-<meta
-  name="twitter:card"
-  content="summary_large_image"
->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
-<link
-  rel="icon"
-  sizes="386x387"
-  href="./logo.png"
-/>
+  <link
+    rel="icon"
+    sizes="386x387"
+    href="./logo.png"
+  />
 
-<style>
-:root {
-  --light: #cfd8dc;
-  --medium: #263238;
-  --black: #102027;
-}
+  <style>
+    :root {
+      --light: #cfd8dc;
+      --medium: #263238;
+      --black: #102027;
+    }
 
-html, body {
-  background-color: var(--black);
-}
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
+    html,
+    body {
+      background-color: var(--black);
+    }
 
-@font-face {
-  font-family: "PixelOperator8-Bold";
-  src: url(./PixelOperator8-Bold.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: normal;
-}
+    @font-face {
+      font-family: "PixelOperator8-Bold";
+      src: url(./PixelOperator8-Bold.ttf) format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
 
-.App {
-  margin: 0 auto;
-  max-width: 525px;
-  min-height: 100vh;
-  font-family: "PixelOperator8-Bold", serif;
-  background-color: var(--medium);
-  transition: padding 0.1s;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-weight: normal;
+    }
 
-.title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 10px 0;
-  font-size: 64px;
-  line-height: 1.2;
-  color: var(--light);
-  text-shadow: 4px 4px 0 var(--black);
-  transition: font-size 0.1s;
-}
+    .App {
+      margin: 0 auto;
+      max-width: 525px;
+      min-height: 100vh;
+      font-family: "PixelOperator8-Bold", serif;
+      background-color: var(--medium);
+      transition: padding 0.1s;
+    }
 
-.developer {
-  margin-top: 10px;
-  display: block;
-  padding: 0 10px;
-  text-align: center;
-  line-height: 1.4;
-  font-size: 16px;
-  color: var(--light);
-  text-shadow: 2px 2px 0 var(--black);
-  transition: margin-top 0.1s;
-}
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 10px 0;
+      font-size: 64px;
+      line-height: 1.2;
+      color: var(--light);
+      text-shadow: 4px 4px 0 var(--black);
+      transition: font-size 0.1s;
+    }
 
-.projects .project {
-  margin-top: 50px;
-}
+    .developer {
+      margin-top: 10px;
+      display: block;
+      padding: 0 10px;
+      text-align: center;
+      line-height: 1.4;
+      font-size: 16px;
+      color: var(--light);
+      text-shadow: 2px 2px 0 var(--black);
+      transition: margin-top 0.1s;
+    }
 
-.projects .project .header {
-  padding: 15px 10px 8px;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.4;
-  color: var(--light);
-  background-color: var(--black);
-  transition: font-size 0.1s;
-}
+    .projects .project {
+      margin-top: 50px;
+    }
 
-.projects .project .description {
-  margin-top: 24px;
-  padding: 0 10px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.4;
-  color: var(--light);
-  text-shadow: 2px 2px 0 var(--black);
-}
+    .projects .project .header {
+      padding: 15px 10px 8px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      color: var(--light);
+      background-color: var(--black);
+      transition: font-size 0.1s;
+    }
 
-.projects .links {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-}
+    .projects .project .description {
+      margin-top: 24px;
+      padding: 0 10px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--light);
+      text-shadow: 2px 2px 0 var(--black);
+    }
 
-.projects .links .link {
-  display: block;
-  width: 100%;
-  padding: 0 10px;
-  line-height: 1.6;
-  color: var(--light);
-  outline: none;
-}
+    .projects .links {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
 
-.projects .links .link.steam {
-  padding: 20px 0 18px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 18px;
-  background-color: var(--black);
-}
+    .projects .links .link {
+      display: block;
+      width: 100%;
+      padding: 0 10px;
+      line-height: 1.6;
+      color: var(--light);
+      outline: none;
+    }
 
-.projects .links .link.gplay {
-  margin-top: 8px;
-  font-size: 16px;
-  text-shadow: 2px 2px 0 var(--black);
-}
+    .projects .links .link.steam {
+      padding: 20px 0 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 18px;
+      background-color: var(--black);
+    }
 
-.projects .links .link.wait {
-  color: var(--black);
-  text-shadow: none;
-}
+    .projects .links .link.gplay {
+      margin-top: 8px;
+      font-size: 16px;
+      text-shadow: 2px 2px 0 var(--black);
+    }
 
-.projects .links .reviews-title {
-  margin-top: 24px;
-  display: block;
-  width: 100%;
-  padding: 5px 10px 0;
-  line-height: 1.8;
-  font-size: 20px;
-  color: var(--light);
-  background-color: var(--black);
-}
+    .projects .links .link.wait {
+      color: var(--black);
+      text-shadow: none;
+    }
 
-.projects .links .reviews {
-  margin-top: 8px;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
+    .projects .links .reviews-title {
+      margin-top: 24px;
+      display: block;
+      width: 100%;
+      padding: 5px 10px 0;
+      line-height: 1.8;
+      font-size: 20px;
+      color: var(--light);
+      background-color: var(--black);
+    }
 
-.projects .links .link.reviews-item {
-  line-height: 1.8;
-  font-size: 16px;
-  color: var(--light);
-  text-shadow: 2px 2px 0 var(--black);
-  outline: none;
-}
+    .projects .links .reviews {
+      width: 100%;
+    }
 
-.info {
-  margin-top: 128px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 10px;
-  text-shadow: 2px 2px 0 var(--black);
-}
+    .projects .links .link.reviews-item {
+      margin-top: 10px;
+      line-height: 1.8;
+      font-size: 16px;
+      color: var(--light);
+      text-shadow: 2px 2px 0 var(--black);
+      outline: none;
+    }
 
-.info .link {
-  margin: 0 16px 16px 0;
-  font-size: 14px;
-  color: var(--light);
-  outline: none;
-}
+    .projects .links .reviews-item-description {
+      margin-top: 4px;
+      line-height: 1.4;
+      font-size: 14px;
+      color: var(--light);
+      text-shadow: 2px 2px 0 var(--black);
+    }
 
-.info .link:last-child {
-  margin-right: 0;
-}
+    .info {
+      margin-top: 128px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 10px;
+      text-shadow: 2px 2px 0 var(--black);
+    }
 
-@media (max-width: 400px) {
-  .developer {
-    margin-top: 20px;
-  }
+    .info .link {
+      margin: 0 16px 16px 0;
+      font-size: 14px;
+      color: var(--light);
+      outline: none;
+    }
 
-  .title {
-    font-size: 48px;
-  }
+    .info .link:last-child {
+      margin-right: 0;
+    }
 
-  .projects .project .header {
-    font-size: 20px;
-  }
-}
+    @media (max-width: 400px) {
+      .developer {
+        margin-top: 20px;
+      }
 
-@media (max-width: 310px) {
-  .title {
-    font-size: 32px;
-  }
-}
-</style>
+      .title {
+        font-size: 48px;
+      }
+
+      .projects .project .header {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 310px) {
+      .title {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<img
-  src="https://mc.yandex.ru/watch/73416526"
-  alt="mc"
-  style="position:absolute;left:-9999px;"
-/>
+  <img
+    src="https://mc.yandex.ru/watch/73416526"
+    alt="mc"
+    style="position:absolute;left:-9999px;"
+  />
 
-<div class="App">
-  <header>
-    <h1>
-      <span class="title">
-        <span>PIX</span>
-        <span>SYNT</span>
-      </span>
-
-      <span class="developer">
-        INDIE DEVELOPER OF UNUSUAL GAMEPLAY MECHANICS
-      </span>
-    </h1>
-  </header>
-
-  <main class="projects">
-    <section class="project">
-      <h2 class="header">
-        LIFE IS NOT THE END
-      </h2>
-
-      <h3 class="description">
-        HELP LINTE GET OUT OF LIMBO. GET TO LEVEL 25 AND LEARN ITS HISTORY.
-        JUMP ON THE PLATFORMS. BEWARE OF SHURIKENS AND SHOOT THE ACTIVATORS.
-        SEARCH THE LEVEL FOR THE ENTRANCE TO THE NEXT LEVEL, BUT BE CAREFUL!
-        PLATFORMS ARE DESTRUCTIBLE - DO NOT MAKE UNNECESSARY MOVEMENTS!
-      </h3>
-
-      <div class="links">
-        <a
-          href="https://store.steampowered.com/app/1555900/Life_Is_Not_The_End"
-          target="_blank"
-          class="link steam"
-        >
-          AVAILABLE ON STEAM
-        </a>
-
-        <div class="link gplay">
-          SEARCH IN GOOGLE PLAY
-        </div>
-
-        <!--
-        <span class="link wait">
-          COMING SOON ON STEAM
+  <div class="App">
+    <header>
+      <h1>
+        <span class="title">
+          <span>PIX</span>
+          <span>SYNT</span>
         </span>
-        -->
 
-        <div class="reviews-title">
-          REVIEWS
-        </div>
+        <span class="developer">
+          INDIE DEVELOPER OF UNUSUAL GAMEPLAY MECHANICS
+        </span>
+      </h1>
+    </header>
 
-        <div class="reviews">
+    <main class="projects">
+      <section class="project">
+        <h2 class="header">
+          LIFE IS NOT THE END
+        </h2>
+
+        <h3 class="description">
+          HELP LINTE GET OUT OF LIMBO. GET TO LEVEL 25 AND LEARN ITS HISTORY.
+          JUMP ON THE PLATFORMS. BEWARE OF SHURIKENS AND SHOOT THE ACTIVATORS.
+          SEARCH THE LEVEL FOR THE ENTRANCE TO THE NEXT LEVEL, BUT BE CAREFUL!
+          PLATFORMS ARE DESTRUCTIBLE - DO NOT MAKE UNNECESSARY MOVEMENTS!
+        </h3>
+
+        <div class="links">
           <a
-            href="https://gameskeys.net/top-steam-games-to-lookout-for-in-march-2021/#LifeIsNotTheEnd"
+            href="https://store.steampowered.com/app/1555900/Life_Is_Not_The_End"
             target="_blank"
-            class="link reviews-item"
+            class="link steam"
           >
-            GAMESKEYS
+            AVAILABLE ON STEAM
           </a>
+
+          <div class="link gplay">
+            SEARCH IN GOOGLE PLAY
+          </div>
+
+          <!--
+          <span class="link wait">
+            COMING SOON ON STEAM
+          </span>
+          -->
+
+          <div class="reviews-title">
+            REVIEWS
+          </div>
+
+          <div class="reviews">
+            <a
+              href="https://gameskeys.net/top-steam-games-to-lookout-for-in-march-2021/#LifeIsNotTheEnd"
+              target="_blank"
+              class="link reviews-item"
+            >
+              GAMESKEYS
+            </a>
+
+            <div class="reviews-item-description">
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="info">
-    <a
-      href="mailto:pixsynt@ya.ru"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="link"
-    >
-      PIXSYNT@YA.RU
-    </a>
+    <footer class="info">
+      <a
+        href="mailto:pixsynt@ya.ru"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link"
+      >
+        PIXSYNT@YA.RU
+      </a>
 
-    <a
-      href="https://fontlibrary.org"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="link"
-    >
-      FONT
-    </a>
+      <a
+        href="https://fontlibrary.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link"
+      >
+        FONT
+      </a>
 
-    <a
-      href="privacy.html"
-      target="_blank"
-      class="link"
-    >
-      PRIVACY
-    </a>
-  </footer>
-</div>
+      <a
+        href="privacy.html"
+        target="_blank"
+        class="link"
+      >
+        PRIVACY
+      </a>
+    </footer>
+  </div>
 </body>
+
 </html>
