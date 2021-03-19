@@ -133,7 +133,7 @@
       transition: padding 0.1s;
     }
 
-    .title {
+    .header {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -161,10 +161,10 @@
       margin-top: 50px;
     }
 
-    .projects .project .header {
+    .projects .project .title {
       padding: 15px 10px 8px;
       text-align: center;
-      font-size: 28px;
+      font-size: 26px;
       line-height: 1.4;
       color: var(--light);
       background-color: var(--black);
@@ -181,61 +181,56 @@
       text-shadow: 2px 2px 0 var(--black);
     }
 
-    .projects .links {
+    .projects .project .links {
       margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 10px 26px;
       text-align: center;
+      background-color: var(--black);
     }
 
-    .projects .links .link {
-      display: block;
-      width: 100%;
+    .projects .project .links .link {
       padding: 0 10px;
-      line-height: 1.6;
+      letter-spacing: 2px;
+      line-height: 2.5;
+      font-weight: bold;
+      font-size: 18px;
       color: var(--light);
       outline: none;
     }
 
-    .projects .links .link.steam {
-      padding: 36px 10px 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 22px;
-      background-color: var(--black);
+    .projects .project .reviews-container {
+      margin-top: 15px;
     }
 
-    .projects .links .link.gplay {
-      margin-top: 12px;
-      font-size: 16px;
-      text-shadow: 2px 2px 0 var(--black);
-    }
-
-    .projects .links .reviews-title {
-      margin-top: 10px;
-      display: block;
-      width: 100%;
-      padding: 4px 10px 0;
+    .projects .project .reviews-container .reviews-title {
+      padding: 0 10px;
+      text-align: center;
       line-height: 1.8;
-      font-size: 20px;
+      font-size: 18px;
       color: var(--light);
-      background-color: var(--black);
     }
 
-    .projects .links .reviews {
-      width: 100%;
+    .projects .project .reviews-container .reviews {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .projects .links .link.reviews-item {
-      margin-top: 5px;
-      line-height: 1.8;
+    .projects .project .reviews-container .reviews .reviews-item {
+      padding: 0 10px;
+      line-height: 1.6;
       font-size: 14px;
       color: var(--light);
       text-shadow: 2px 2px 0 var(--black);
       outline: none;
     }
 
-    .projects .links .reviews-item-description {
+    .projects .project .reviews-container .reviews .reviews-item .reviews-item-description {
       margin-top: 4px;
       line-height: 1.4;
       font-size: 14px;
@@ -297,7 +292,7 @@
       <h1 style="display: none;">PIXSYNT</h1>
 
       <div>
-        <span class="title">
+        <span class="header">
           <span>PIX</span>
           <span>SYNT</span>
         </span>
@@ -310,7 +305,7 @@
 
     <main class="projects">
       <section class="project">
-        <h2 class="header">
+        <h2 class="title">
           LIFE IS NOT THE END
         </h2>
 
@@ -325,7 +320,7 @@
           <a
             href="https://store.steampowered.com/app/1555900/Life_Is_Not_The_End"
             target="_blank"
-            class="link steam"
+            class="link"
           >
             STEAM
           </a>
@@ -333,11 +328,13 @@
           <a
             href="https://play.google.com/store/apps/details?id=org.godotengine.lifeisnottheend"
             target="_blank"
-            class="link gplay"
+            class="link"
           >
             GOOGLE PLAY
           </a>
+        </div>
 
+        <div class="reviews-container">
           <div class="reviews-title">
             REVIEWS
           </div>
@@ -346,13 +343,13 @@
             <a
               href="https://gameskeys.net/top-steam-games-to-lookout-for-in-march-2021/#LifeIsNotTheEnd"
               target="_blank"
-              class="link reviews-item"
+              class="reviews-item"
             >
               GAMESKEYS
-            </a>
 
-            <div class="reviews-item-description">
-            </div>
+              <div class="reviews-item-description">
+              </div>
+            </a>
           </div>
         </div>
       </section>
